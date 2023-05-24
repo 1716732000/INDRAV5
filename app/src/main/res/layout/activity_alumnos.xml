@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Alumnos">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="#00BCD4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="GESTION DE ALUMNOS"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.5" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="230dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="75dp"
+        android:layout_marginEnd="10dp"
+        android:background="#C7BFBF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="25dp"
+            android:text="CODIGO"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="NOMBRE"
+            app:layout_constraintStart_toStartOf="@+id/textView8"
+            app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="APELLIDO"
+            app:layout_constraintStart_toStartOf="@+id/textView8"
+            app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+        <EditText
+            android:id="@+id/edtAlumnosCodigo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="35dp"
+            android:ems="10"
+            android:hint="Codigo"
+            android:inputType="textCapCharacters"
+            app:layout_constraintStart_toEndOf="@+id/textView8"
+            app:layout_constraintTop_toTopOf="@+id/textView8" />
+
+        <EditText
+            android:id="@+id/edtAlumnosNombre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Nombre"
+            android:inputType="textCapCharacters"
+            app:layout_constraintStart_toStartOf="@+id/edtAlumnosCodigo"
+            app:layout_constraintTop_toTopOf="@+id/textView9" />
+
+        <EditText
+            android:id="@+id/edtAlumnosApellidos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Apellidos"
+            android:inputType="textCapCharacters"
+            app:layout_constraintStart_toStartOf="@+id/edtAlumnosCodigo"
+            app:layout_constraintTop_toTopOf="@+id/textView10" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="330dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <LinearLayout
+                android:layout_width="180dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/btnAlumnosGuardar"
+                    android:layout_width="match_parent"
+                    android:layout_height="75dp"
+                    android:onClick="AlumnosAgregar"
+                    android:text="GUARDAR" />
+
+                <Button
+                    android:id="@+id/btnAlumnosModificar"
+                    android:layout_width="match_parent"
+                    android:layout_height="75dp"
+                    android:onClick="AlumnosModificar"
+                    android:text="MODIFICAR" />
+
+                <Button
+                    android:id="@+id/btnAlumnosFinalizar"
+                    android:layout_width="match_parent"
+                    android:layout_height="75dp"
+                    android:backgroundTint="#CDDC39"
+                    android:onClick="AlumnosFinalizar"
+                    android:text="FINALIZAR" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="180dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/btnAlumnosBuscar"
+                    android:layout_width="match_parent"
+                    android:layout_height="75dp"
+                    android:onClick="AlumnosConsultar"
+                    android:text="BUSCAR" />
+
+                <Button
+                    android:id="@+id/btnAlumnosEliminar"
+                    android:layout_width="match_parent"
+                    android:layout_height="75dp"
+                    android:backgroundTint="#E91E63"
+                    android:onClick="AlumnosEliminar"
+                    android:text="ELIMINAR" />
+
+                <Button
+                    android:id="@+id/btnAlumnosVaciar"
+                    android:layout_width="match_parent"
+                    android:layout_height="75dp"
+                    android:backgroundTint="#03A9F4"
+                    android:onClick="AlumnosLimpiarCajas"
+                    android:text="VACIAR CAJAS" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

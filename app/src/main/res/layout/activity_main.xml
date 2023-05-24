@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ED02BBD3"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="GESTION DE NOTAS"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="25dp"
+        android:background="#00BCD4"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/indra01" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btnMainNotasGestion"
+                android:layout_width="match_parent"
+                android:layout_height="75dp"
+                android:backgroundTint="#FF9800"
+                android:onClick="MostrarNotasGestion"
+                android:text="NOTAS GESTION" />
+
+            <Button
+                android:id="@+id/btnMainNotasMatricula"
+                android:layout_width="match_parent"
+                android:layout_height="75dp"
+                android:backgroundTint="#9C27B0"
+                android:onClick="MostrarNotasMatricula"
+                android:text="MATRICULA" />
+
+            <Button
+                android:id="@+id/btnMainAlumnos"
+                android:layout_width="match_parent"
+                android:layout_height="75dp"
+                android:onClick="MostrarAlumnos"
+                android:text="ALUMNOS" />
+
+            <Button
+                android:id="@+id/btnMainNiveles"
+                android:layout_width="match_parent"
+                android:layout_height="75dp"
+                android:onClick="MostrarNiveles"
+                android:text="NIVELES" />
+
+            <Button
+                android:id="@+id/btnMainMaterias"
+                android:layout_width="match_parent"
+                android:layout_height="75dp"
+                android:onClick="MostrarMaterias"
+                android:text="MATERIAS" />
+
+            <Button
+                android:id="@+id/btnMainFinalizar"
+                android:layout_width="match_parent"
+                android:layout_height="75dp"
+                android:backgroundTint="#FF0000"
+                android:onClick="Finalizar"
+                android:text="FINALIZAR" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

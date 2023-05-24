@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NotasMatricula">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="#00BCD4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView25"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MATRICULAS"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.5" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="310dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="330dp"
+            android:layout_height="match_parent"
+            android:background="#E8FBD1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:text="ALUMNO"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/edtCodigoAlumno"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:ems="10"
+                android:hint="Codigo de Alumno"
+                android:inputType="text"
+                app:layout_constraintStart_toEndOf="@+id/textView13"
+                app:layout_constraintTop_toTopOf="@+id/textView13" />
+
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="NOMBRE"
+                app:layout_constraintStart_toStartOf="@+id/textView13"
+                app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
+            <TextView
+                android:id="@+id/textView15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="NIVEL"
+                app:layout_constraintStart_toStartOf="@+id/textView13"
+                app:layout_constraintTop_toBottomOf="@+id/textView14" />
+
+            <EditText
+                android:id="@+id/edtCodigoNivel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Codigo de Nivel"
+                android:inputType="text"
+                app:layout_constraintStart_toStartOf="@+id/edtCodigoAlumno"
+                app:layout_constraintTop_toTopOf="@+id/textView15" />
+
+            <EditText
+                android:id="@+id/edtCodigoMateria"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Codigo de Materia"
+                android:inputType="text"
+                app:layout_constraintStart_toStartOf="@+id/edtCodigoAlumno"
+                app:layout_constraintTop_toTopOf="@+id/textView20" />
+
+            <TextView
+                android:id="@+id/textNombreAlumno"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nombre Alumno"
+                app:layout_constraintStart_toStartOf="@+id/edtCodigoAlumno"
+                app:layout_constraintTop_toTopOf="@+id/textView14" />
+
+            <TextView
+                android:id="@+id/textView20"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="MATERIA"
+                app:layout_constraintStart_toStartOf="@+id/textView21"
+                app:layout_constraintTop_toBottomOf="@+id/textView21" />
+
+            <TextView
+                android:id="@+id/textView21"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="NOMBRE"
+                app:layout_constraintStart_toStartOf="@+id/textView15"
+                app:layout_constraintTop_toBottomOf="@+id/textView15" />
+
+            <TextView
+                android:id="@+id/textNombreNivel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nombre Nivel"
+                app:layout_constraintStart_toStartOf="@+id/edtCodigoNivel"
+                app:layout_constraintTop_toTopOf="@+id/textView21" />
+
+            <TextView
+                android:id="@+id/textView23"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="NOMBRE"
+                app:layout_constraintStart_toStartOf="@+id/textView20"
+                app:layout_constraintTop_toBottomOf="@+id/textView20" />
+
+            <TextView
+                android:id="@+id/textNombreMateria"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nombre de Materia"
+                app:layout_constraintStart_toStartOf="@+id/edtCodigoAlumno"
+                app:layout_constraintTop_toTopOf="@+id/textView23" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="55dp"
+            android:layout_height="match_parent"
+            android:background="#B8EFF6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageButton
+                android:id="@+id/btnConfirmarAlumno"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/icon_search" />
+
+            <ImageButton
+                android:id="@+id/btnConfirmarNivel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="120dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/icon_search" />
+
+            <ImageButton
+                android:id="@+id/btnConfirmarMateria"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="235dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/icon_search" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="420dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <LinearLayout
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/btnNotasMatriculaMatricula"
+                    android:layout_width="match_parent"
+                    android:layout_height="75dp"
+                    android:text="MATRICULAR" />
+
+                <Button
+                    android:id="@+id/btnNotasMatriculaFinalizar"
+                    android:layout_width="match_parent"
+                    android:layout_height="75dp"
+                    android:backgroundTint="#CDDC39"
+                    android:onClick="NotasMatriculaFinalizar"
+                    android:text="FINALIZAR" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/btnNotasMatriculaBuscar"
+                    android:layout_width="match_parent"
+                    android:layout_height="75dp"
+                    android:text="BUSCAR" />
+
+                <Button
+                    android:id="@+id/btnNotasMatriculaVaciar"
+                    android:layout_width="match_parent"
+                    android:layout_height="75dp"
+                    android:text="VACIAR CAJAS" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

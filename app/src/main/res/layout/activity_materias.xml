@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Materias">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="#00BCD4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="GESTION DE MATERIAS"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.5" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="10dp"
+        android:background="#A4E0FB"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="409dp"
+            android:layout_height="198dp"
+            android:orientation="vertical"
+            tools:layout_editor_absoluteX="1dp"
+            tools:layout_editor_absoluteY="1dp">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="CODIGO DE MATERIA" />
+
+            <EditText
+                android:id="@+id/edtMateriaCodigo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Maximo 4 caracteres"
+                android:inputType="textCapCharacters"
+                android:maxLength="4" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="35dp" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="NOMBRE DE MATERIA" />
+
+            <EditText
+                android:id="@+id/edtMateriaNombre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textCapCharacters" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="350dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <LinearLayout
+                android:layout_width="180dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/btnMateriasGuardar"
+                    android:layout_width="match_parent"
+                    android:layout_height="75dp"
+                    android:onClick="MateriasGuardar"
+                    android:text="GUARDAR" />
+
+                <Button
+                    android:id="@+id/btnMateriasModificar"
+                    android:layout_width="match_parent"
+                    android:layout_height="75dp"
+                    android:onClick="MateriasModificar"
+                    android:text="MODIFICAR" />
+
+                <Button
+                    android:id="@+id/btnMateriasFinalizar"
+                    android:layout_width="match_parent"
+                    android:layout_height="75dp"
+                    android:backgroundTint="#FFEB3B"
+                    android:onClick="MateriasFinalizar"
+                    android:text="FINALIZAR"
+                    android:textColor="#000000" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="180dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/btnMateriasConsultar"
+                    android:layout_width="match_parent"
+                    android:layout_height="75dp"
+                    android:onClick="MateriasConsultar"
+                    android:text="CONSULTAR" />
+
+                <Button
+                    android:id="@+id/btnMateriasEliminar"
+                    android:layout_width="match_parent"
+                    android:layout_height="75dp"
+                    android:backgroundTint="#E91E63"
+                    android:onClick="MateriasEliminar"
+                    android:text="ELIMINAR" />
+
+                <Button
+                    android:id="@+id/btnMateriasVaciar"
+                    android:layout_width="match_parent"
+                    android:layout_height="75dp"
+                    android:backgroundTint="#00BCD4"
+                    android:onClick="LimparCajas2"
+                    android:text="VACIAR CAJAS" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
