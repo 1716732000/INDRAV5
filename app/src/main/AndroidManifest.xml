@@ -13,10 +13,13 @@
         android:theme="@style/Theme.INDRAV5"
         tools:targetApi="31">
         <activity
-            android:name=".NotasMatricula"
+            android:name=".NotasGestionarNotas"
             android:exported="false" />
         <activity
             android:name=".NotasGestionar"
+            android:exported="false" />
+        <activity
+            android:name=".NotasMatricula"
             android:exported="false" />
         <activity
             android:name=".Alumnos"

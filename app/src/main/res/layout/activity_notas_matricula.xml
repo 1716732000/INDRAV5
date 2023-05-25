@@ -21,7 +21,7 @@
             android:id="@+id/textView25"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="MATRICULAS"
+            android:text="MATRICULA DE ALUMNOS"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -60,7 +60,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
-                android:id="@+id/edtCodigoAlumno"
+                android:id="@+id/edtGestionCodigoAlumno"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
@@ -89,32 +89,24 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView14" />
 
             <EditText
-                android:id="@+id/edtCodigoNivel"
+                android:id="@+id/edtGestionCodigoNivel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="Codigo de Nivel"
                 android:inputType="text"
-                app:layout_constraintStart_toStartOf="@+id/edtCodigoAlumno"
+                app:layout_constraintStart_toStartOf="@+id/edtGestionCodigoAlumno"
                 app:layout_constraintTop_toTopOf="@+id/textView15" />
 
             <EditText
-                android:id="@+id/edtCodigoMateria"
+                android:id="@+id/edtGestionCodigoMateria"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="Codigo de Materia"
                 android:inputType="text"
-                app:layout_constraintStart_toStartOf="@+id/edtCodigoAlumno"
+                app:layout_constraintStart_toStartOf="@+id/edtGestionCodigoAlumno"
                 app:layout_constraintTop_toTopOf="@+id/textView20" />
-
-            <TextView
-                android:id="@+id/textNombreAlumno"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Nombre Alumno"
-                app:layout_constraintStart_toStartOf="@+id/edtCodigoAlumno"
-                app:layout_constraintTop_toTopOf="@+id/textView14" />
 
             <TextView
                 android:id="@+id/textView20"
@@ -135,14 +127,6 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView15" />
 
             <TextView
-                android:id="@+id/textNombreNivel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Nombre Nivel"
-                app:layout_constraintStart_toStartOf="@+id/edtCodigoNivel"
-                app:layout_constraintTop_toTopOf="@+id/textView21" />
-
-            <TextView
                 android:id="@+id/textView23"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -151,12 +135,42 @@
                 app:layout_constraintStart_toStartOf="@+id/textView20"
                 app:layout_constraintTop_toBottomOf="@+id/textView20" />
 
-            <TextView
-                android:id="@+id/textNombreMateria"
+            <EditText
+                android:id="@+id/textGestionNombreAlumno"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Nombre de Materia"
-                app:layout_constraintStart_toStartOf="@+id/edtCodigoAlumno"
+                android:background="#00BCD4"
+                android:clickable="false"
+                android:editable="false"
+                android:ems="10"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:focusedByDefault="false"
+                android:inputType="text"
+                android:screenReaderFocusable="false"
+                app:layout_constraintStart_toStartOf="@+id/edtGestionCodigoAlumno"
+                app:layout_constraintTop_toTopOf="@+id/textView14" />
+
+            <EditText
+                android:id="@+id/textGestionNombreNivel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00BCD4"
+                android:editable="false"
+                android:ems="10"
+                android:inputType="text"
+                app:layout_constraintStart_toStartOf="@+id/edtGestionCodigoAlumno"
+                app:layout_constraintTop_toTopOf="@+id/textView21" />
+
+            <EditText
+                android:id="@+id/textGestionNombreMateria"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00BCD4"
+                android:editable="false"
+                android:ems="10"
+                android:inputType="text"
+                app:layout_constraintStart_toStartOf="@+id/edtGestionCodigoAlumno"
                 app:layout_constraintTop_toTopOf="@+id/textView23" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -173,6 +187,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
+                android:onClick="NotasConfirmarAlumno"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
@@ -184,6 +199,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="120dp"
+                android:onClick="NotasConfirmarNivel"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
@@ -195,6 +211,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="235dp"
+                android:onClick="NotasConfirmarMaterias"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
@@ -231,15 +248,15 @@
                     android:id="@+id/btnNotasMatriculaMatricula"
                     android:layout_width="match_parent"
                     android:layout_height="75dp"
+                    android:onClick="NotasMatricularAlumno"
                     android:text="MATRICULAR" />
 
                 <Button
-                    android:id="@+id/btnNotasMatriculaFinalizar"
+                    android:id="@+id/btnNotasMatriculaNotas"
                     android:layout_width="match_parent"
                     android:layout_height="75dp"
-                    android:backgroundTint="#CDDC39"
-                    android:onClick="NotasMatriculaFinalizar"
-                    android:text="FINALIZAR" />
+                    android:text="NOTAS" />
+
             </LinearLayout>
 
             <LinearLayout
@@ -248,16 +265,20 @@
                 android:orientation="vertical">
 
                 <Button
-                    android:id="@+id/btnNotasMatriculaBuscar"
-                    android:layout_width="match_parent"
-                    android:layout_height="75dp"
-                    android:text="BUSCAR" />
-
-                <Button
                     android:id="@+id/btnNotasMatriculaVaciar"
                     android:layout_width="match_parent"
                     android:layout_height="75dp"
+                    android:backgroundTint="#F44336"
+                    android:onClick="MatriculaLimpiarCajas"
                     android:text="VACIAR CAJAS" />
+
+                <Button
+                    android:id="@+id/btnNotasMatriculaFinalizar"
+                    android:layout_width="match_parent"
+                    android:layout_height="75dp"
+                    android:backgroundTint="#CDDC39"
+                    android:onClick="NotasMatriculaFinalizar"
+                    android:text="FINALIZAR" />
             </LinearLayout>
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -72,7 +72,6 @@ public class Niveles extends AppCompatActivity {
 
             if(fila.moveToFirst())
             {
-                //txtCodigo.setText(fila.getString(0));
                 txtNivelCodigo.setText(fila.getString(0));
                 txtNivelNombre.setText(fila.getString(1));
                 BaseDatos.close();

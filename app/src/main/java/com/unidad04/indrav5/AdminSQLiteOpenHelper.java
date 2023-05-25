@@ -30,9 +30,9 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
 
         BaseDatos.execSQL("create table tblNotas(" +
                 //"idNotas int primary key autoincrement," +
-                "codAlumno int," +
-                "codNivel int," +
-                "codMateria int," +
+                "codAlumno text," +
+                "codNivel text," +
+                "codMateria text," +
                 "notP1 real," +
                 "notP2 real," +
                 "notP3 real," +
