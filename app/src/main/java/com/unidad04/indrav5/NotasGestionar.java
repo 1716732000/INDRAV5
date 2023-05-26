@@ -117,8 +117,6 @@ public class NotasGestionar extends AppCompatActivity {
 
             if(fila.moveToFirst())
             {
-                //txtCodigo.setText(fila.getString(0));
-                //txtNombre.setText(fila.getString(0));
                 textNombreMa.setText(fila.getString(0));
                 BaseDatos.close();
             }
