@@ -56,6 +56,10 @@ public class NotasGestionarNotas extends AppCompatActivity {
     }//
 
     //Actualizacion de notas
+    /*
+        Primero se debe validad el alumno, pues podria tener notas ya registradas
+        Despues de validad el alumno se pueden editar las notas.
+    * */
     public void NotasGestionarActualizar(View view)
     {
         AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "indra.db", null, 1);
@@ -112,6 +116,13 @@ public class NotasGestionarNotas extends AppCompatActivity {
 
     //Validar Alumno
     public void NotasGestionarValidarAlumno(View view){
+        /*
+            Busca el alumno en la tabla tblNotas validando con tres parametros
+            codAlumno, codNivel, codMateria y carga los notas existentes
+            en cualquiera de los 4 periodos.
+            Despues de validar, se puede actualizar notas.
+        */
+
         Toast.makeText(this, "EN PROCESO", Toast.LENGTH_LONG).show();
     }//Validar Alumno
 
