@@ -57,8 +57,8 @@ public class NotasGestionarNotas extends AppCompatActivity {
 
     //Actualizacion de notas
     /*
-        Primero se debe validad el alumno, pues podria tener notas ya registradas
-        Despues de validad el alumno se pueden editar las notas.
+        Primero se debe validar el alumno, pues podria tener notas ya registradas
+        Despues de validar el alumno se pueden editar las notas.
     * */
     public void NotasGestionarActualizar(View view)
     {
