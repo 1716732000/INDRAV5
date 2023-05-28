@@ -161,7 +161,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="75dp"
                     android:backgroundTint="#FFC107"
-                    android:onClick="NivelesLimpiarCajas"
+                    android:onClick="LimpiarCajas"
                     android:text="VACIAR CAJAS" />
             </LinearLayout>
         </LinearLayout>

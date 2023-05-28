@@ -1,19 +1,19 @@
 package com.unidad04.indrav5;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.ContentValues;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+import com.unidad04.indrav5.db.dao.MateriaDao;
+import com.unidad04.indrav5.db.models.Materia;
 
 public class Materias extends AppCompatActivity {
 
-    EditText txtCodigo, txtNombre;
-    String Codigo, Codigo1, Nombre;
+    private EditText txtCodigo;
+    private EditText txtNombre;
+    private MateriaDao materiaDao;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,136 +21,103 @@ public class Materias extends AppCompatActivity {
 
         txtCodigo = findViewById(R.id.edtMateriaCodigo);
         txtNombre = findViewById(R.id.edtMateriaNombre);
+
+        materiaDao = new MateriaDao(this);
     }
 
     public void MateriasGuardar(View view){
-        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "indra.db", null, 1);
-        SQLiteDatabase BaseDatos = admin.getReadableDatabase();
 
-        Codigo = txtCodigo.getText().toString();
-        Nombre = txtNombre.getText().toString();
-
-        if(!Codigo.isEmpty() && !Nombre.isEmpty())
-        {
-            ContentValues registro = new ContentValues();
-            registro.put("codMateria", Codigo);
-            registro.put("nomMateria", Nombre);
-
-            BaseDatos.insert("tblMaterias", null, registro);
-            BaseDatos.close();
-
-            LimpiarCajas();
-            Toast.makeText(this, "REGISTRO ALMACENADO", Toast.LENGTH_LONG).show();
-        }
-        else
-        {
+        String nombre = txtNombre.getText().toString();
+        if (nombre.isEmpty()) {
             Toast.makeText(this, "LLENAR TODOS LOS CAMPOS", Toast.LENGTH_LONG).show();
+            return;
         }
-    }//MateriasGuardar
 
-    //Consultar
-    public void MateriasConsultar(View view)
-    {
-        txtCodigo = findViewById(R.id.edtMateriaCodigo);
-        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "indra.db", null, 1);
-        SQLiteDatabase BaseDatos = admin.getWritableDatabase();
+        Materia materia = new Materia(0, nombre);
+        materiaDao.openConnection();
+        materiaDao.insert(materia);
+        materiaDao.closeConnection();
 
-        Codigo = txtCodigo.getText().toString();
+        LimpiarCajas();
+        Toast.makeText(this, "REGISTRO ALMACENADO", Toast.LENGTH_LONG).show();
+    }
 
-        if(!Codigo.isEmpty())
-        {
-            Cursor fila = BaseDatos.rawQuery(
-                    "SELECT codMateria, nomMateria " +
-                            "FROM tblMaterias " +
-                            "WHERE codMateria =" + Codigo, null);
+    public void MateriasConsultar(View view) {
 
-            if(fila.moveToFirst())
-            {
-                txtCodigo.setText(fila.getString(0));
-                txtNombre.setText(fila.getString(1));
-                BaseDatos.close();
-            }
-            else
-            {
-                Toast.makeText(this, "NO EXISTE", Toast.LENGTH_LONG).show();
-                LimpiarCajas();
-            }
-        }
-        else
-        {
+        String codigo = txtCodigo.getText().toString();
+        if (codigo.isEmpty()) {
             Toast.makeText(this, "CODIGO VACIO", Toast.LENGTH_LONG).show();
+            return;
         }
-    }//Materias Consultar
 
-    //Modificar
-    public void MateriasModificar(View view)
-    {
-        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "indra.db", null, 1);
-        SQLiteDatabase BaseDatos = admin.getWritableDatabase();
+        materiaDao.openConnection();
+        Materia materia = materiaDao.findById(Integer.parseInt(codigo));
+        materiaDao.closeConnection();
 
-        Codigo = txtCodigo.getText().toString();
-        Codigo1 = txtCodigo.getText().toString();
-        Nombre = txtNombre.getText().toString();
-
-        if(!Codigo.isEmpty() && !Nombre.isEmpty())
-        {
-            ContentValues registro = new ContentValues();
-            registro.put("codMateria", Codigo);
-            registro.put("nomMateria", Nombre);
-
-            int cantidad = BaseDatos.update("tblMaterias", registro, "codMateria=" + Codigo1, null);
-            BaseDatos.close();
-
-            if(cantidad == 1)
-            {
-                Toast.makeText(this, "REGISTRO MODIFICADO", Toast.LENGTH_LONG).show();
-                LimpiarCajas();
-            }
-            else
-            {
-                Toast.makeText(this, "ERROR AL MODIFICAR", Toast.LENGTH_LONG).show();
-            }
+        if(materia == null) {
+            Toast.makeText(this, "NO EXISTE", Toast.LENGTH_LONG).show();
+            LimpiarCajas();
+            return;
         }
-        else
-        {
+
+        txtCodigo.setText(materia.getId());
+        txtNombre.setText(materia.getNombre());
+
+    }
+
+    public void MateriasModificar(View view) {
+
+        String codigo = txtCodigo.getText().toString();
+        String nombre = txtNombre.getText().toString();
+
+        if(codigo.isEmpty() || nombre.isEmpty()) {
             Toast.makeText(this, "UN CAMPO ESTA VACIO", Toast.LENGTH_LONG).show();
+            return;
         }
-    }//Modificar
+
+        Materia materia = new Materia(Integer.parseInt(codigo), nombre);
+        materiaDao.openConnection();
+        long cantidad = materiaDao.update(materia);
+        materiaDao.closeConnection();
+
+        if(cantidad != 1) {
+            Toast.makeText(this, "ERROR AL MODIFICAR", Toast.LENGTH_LONG).show();
+            return;
+        }
+
+        Toast.makeText(this, "REGISTRO MODIFICADO", Toast.LENGTH_LONG).show();
+        LimpiarCajas();
+
+    }
 
     public void MateriasEliminar(View view) {
-        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "indra.db", null, 1);
-        SQLiteDatabase BaseDeDatos = admin.getWritableDatabase();
 
-        Codigo = txtCodigo.getText().toString();
-
-        if (!Codigo.isEmpty()) {
-            int Cantidad = BaseDeDatos.delete("tblMaterias", "codMateria=" + Codigo, null);
-            BaseDeDatos.close();
-
-
-            if (Cantidad == 1) {
-                Toast.makeText(this, "ARTICULO ELIMINADO", Toast.LENGTH_LONG).show();
-                LimpiarCajas();
-            } else {
-                Toast.makeText(this, "ERROR AL ELIMINAR", Toast.LENGTH_LONG).show();
-            }
-        } else {
+        String codigo = txtCodigo.getText().toString();
+        if (codigo.isEmpty()) {
             Toast.makeText(this, "CODIGO VACIO", Toast.LENGTH_LONG).show();
+            return;
         }
+
+        materiaDao.openConnection();
+        long cantidad = materiaDao.delete(new Materia(Integer.parseInt(codigo), null));
+        materiaDao.closeConnection();
+
+        if (cantidad != 1) {
+            Toast.makeText(this, "ERROR AL ELIMINAR", Toast.LENGTH_LONG).show();
+            return;
+        }
+
+        Toast.makeText(this, "ARTICULO ELIMINADO", Toast.LENGTH_LONG).show();
+        LimpiarCajas();
     }
-///////////////////////////////////////////////////////////
+
     public void LimpiarCajas() {
         txtCodigo.setText("");
         txtNombre.setText("");
-    }
-
-    public void LimparCajas2(View view){
-        LimpiarCajas();
     }
 
     public void MateriasFinalizar(View view){
         finish();
     }
 
-
-}//Clase
+}

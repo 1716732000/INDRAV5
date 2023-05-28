@@ -14,8 +14,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-       public void MostrarAlumnos(View view){
-        Intent MA = new Intent(this, Alumnos.class);
+    public void MostrarAlumnos(View view){
+        Intent MA = new Intent(this, AlumnosListar.class);
         startActivity(MA);
     }
 
