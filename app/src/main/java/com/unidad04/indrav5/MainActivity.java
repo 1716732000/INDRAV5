@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(MN);
     }
     public void MostrarMaterias(View view){
-        Intent MM = new Intent(this, Materias.class);
+        Intent MM = new Intent(this, MateriasListar.class);
         startActivity(MM);
     }
 

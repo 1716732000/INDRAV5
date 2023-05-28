@@ -25,7 +25,7 @@ public class Materias extends AppCompatActivity {
         materiaDao = new MateriaDao(this);
     }
 
-    public void MateriasGuardar(View view){
+    public void MateriasGuardar(View view) {
 
         String nombre = txtNombre.getText().toString();
         if (nombre.isEmpty()) {

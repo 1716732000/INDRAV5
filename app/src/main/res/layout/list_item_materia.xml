@@ -10,15 +10,15 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/btnEliminarAlumno"
+            android:id="@+id/btnEliminarMateria"
             android:text="eliminar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
         <TextView
-            android:id="@+id/txtAlumnoInfo"
+            android:id="@+id/txtMateriaInfo"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content" />
 
     </LinearLayout>
 
