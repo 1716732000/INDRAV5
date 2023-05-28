@@ -25,19 +25,17 @@ public class Niveles extends AppCompatActivity {
         nivelDao = new NivelDao(this);
     }
 
-    public void NivelesAgregar(View view) {
+    public void createNivel(View view) {
 
-        String codigo = txtNivelCodigo.getText().toString();
         String nombre = txtNivelNombre.getText().toString();
-
-        if(codigo.isEmpty() || nombre.isEmpty()) {
+        if(nombre.isEmpty()) {
             Toast.makeText(this, "LLENAR TODOS LOS CAMPOS", Toast.LENGTH_LONG).show();
             return;
         }
 
         try {
 
-            Nivel nivel = new Nivel(Integer.parseInt(codigo), nombre);
+            Nivel nivel = new Nivel(0, nombre);
             nivelDao.openConnection();
             nivelDao.insert(nivel);
             nivelDao.closeConnection();

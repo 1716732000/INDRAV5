@@ -117,7 +117,7 @@
                     android:id="@+id/btnNivelesGuardar"
                     android:layout_width="match_parent"
                     android:layout_height="75dp"
-                    android:onClick="NivelesAgregar"
+                    android:onClick="createNivel"
                     android:text="GUARDAR" />
 
                 <Button
