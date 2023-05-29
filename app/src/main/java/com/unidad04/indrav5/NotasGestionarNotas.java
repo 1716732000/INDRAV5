@@ -3,6 +3,7 @@ package com.unidad04.indrav5;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
@@ -96,7 +97,8 @@ public class NotasGestionarNotas extends AppCompatActivity {
             registro.put("notP3", N4);
             registro.put("notPr", PR);
             //
-            int cantidad = BaseDatos.update("tblNotas", registro, "codAlumno=" + txtCodigoAlumno, null);
+            //int cantidad = BaseDatos.update("tblNotas", registro, "codAlumno=" + txtCodigoAlumno, null);
+            int cantidad = BaseDatos.update("tblNotas WHERE codAlumno = ? AND codMateria= ?", new String[] {"txtCodigoAlumno", "txtCodigoMateria"});
             BaseDatos.close();
 
             if(cantidad == 1)
@@ -127,6 +129,8 @@ public class NotasGestionarNotas extends AppCompatActivity {
     }//Validar Alumno
 
     public void NGNFinalizar(View view){
-        finish();
+        Intent MM = new Intent(this, MainActivity.class);
+        startActivity(MM);
     }
+
 }

@@ -302,14 +302,14 @@
                     android:id="@+id/btnNGNValidar"
                     android:layout_width="match_parent"
                     android:layout_height="75dp"
-                    android:text="VALIDAR ALUMNO" />
+                    android:text="ACTUALIZAR NOTAS" />
 
                 <Button
-                    android:id="@+id/button"
+                    android:id="@+id/btnNGNFinalizar"
                     android:layout_width="match_parent"
                     android:layout_height="75dp"
-                    android:onClick="NotasGestionarActualizar"
-                    android:text="ACTUALIZAR" />
+                    android:onClick="NGNFinalizar"
+                    android:text="FINALIZAR" />
 
             </LinearLayout>
 
@@ -322,7 +322,6 @@
                     android:id="@+id/button2"
                     android:layout_width="match_parent"
                     android:layout_height="75dp"
-                    android:onClick="NGNFinalizar"
                     android:text="NUEVA NOTA" />
             </LinearLayout>
         </LinearLayout>
