@@ -97,8 +97,7 @@ public class NotasGestionarNotas extends AppCompatActivity {
             registro.put("notP3", N4);
             registro.put("notPr", PR);
             //
-            //int cantidad = BaseDatos.update("tblNotas", registro, "codAlumno=" + txtCodigoAlumno, null);
-            int cantidad = BaseDatos.update("tblNotas WHERE codAlumno = ? AND codMateria= ?", new String[] {"txtCodigoAlumno", "txtCodigoMateria"});
+            int cantidad = BaseDatos.update("tblNotas", registro, "codAlumno=" + txtCodigoAlumno, null);
             BaseDatos.close();
 
             if(cantidad == 1)
